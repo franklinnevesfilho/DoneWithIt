@@ -1,23 +1,30 @@
 import React, { useState } from 'react';
-import {FlatList, View} from "react-native";
+import {FlatList} from "react-native";
 
-import ListItem from "../components/ListItem";
+import ListItem from "../components/lists/ListItem";
 import Screen from "../components/Screen";
-import ListItemSeparator from "../components/ListItemSeparator";
-import ListItemDeleteAction from "../components/ListItemDeleteAction";
-import colors from "../config/Colors";
+import ListItemSeparator from "../components/lists/ListItemSeparator";
+import ListItemDeleteAction from "../components/lists/ListItemDeleteAction";
 
 const InitialMessages = [
     {
         id: 1,
-        title: 'T1',
-        description: 'D1',
+        title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate doloremque ea eveniethic " +
+            "in minima minus quis rerum similique. Assumenda dolor dolorum eveniet explicabo nesciunt nobis pariatur" +
+            "saepe, voluptatum",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate doloremque ea eveniethic " +
+            "in minima minus quis rerum similique. Assumenda dolor dolorum eveniet explicabo nesciunt nobis pariatur" +
+            "saepe, voluptatum",
         img: require('../assets/mosh.jpg')
     },
     {
         id: 2,
-        title: 'T2',
-        description: 'D2',
+        title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate doloremque ea eveniethic " +
+            "in minima minus quis rerum similique. Assumenda dolor dolorum eveniet explicabo nesciunt nobis pariatur" +
+            "saepe, voluptatum",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cupiditate doloremque ea eveniethic " +
+            "in minima minus quis rerum similique. Assumenda dolor dolorum eveniet explicabo nesciunt nobis pariatur" +
+            "saepe, voluptatum",
         img: require('../assets/mosh.jpg')
     },
 ]

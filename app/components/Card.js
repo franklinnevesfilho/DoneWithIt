@@ -1,17 +1,33 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from "react-native";
-import colors from "../config/Colors";
-import AppText from "./AppText";
+import {View, StyleSheet, Image, TouchableWithoutFeedback, ActivityIndicator} from "react-native";
+import colors from "../config/colors";
+import Text from "./Text";
 
-function Card({title, subTitle, img}) {
+function Card({title, subTitle, imageUrl, onPress}) {
+    const [loading, setLoading] = React.useState(true);
+
     return (
-        <View style={styles.card}>
-            <Image style={styles.img} source={img}/>
-            <View style={styles.detailsContainer}>
-                <AppText style={styles.title}>{title}</AppText>
-                <AppText style={styles.subTitle}>{subTitle}</AppText>
+        <TouchableWithoutFeedback onPress={onPress}>
+            <View style={styles.card}>
+                {loading && (
+                    <ActivityIndicator
+                        size="large"
+                        color="#0000ff"
+                        style={styles.loader}
+                    />
+                )}
+                <Image
+                    source={{ uri: imageUrl }}
+                    style={styles.img}
+                    onLoadStart={() => setLoading(true)}
+                    onLoadEnd={() => setLoading(false)}
+                />
+                <View style={styles.detailsContainer}>
+                    <Text style={styles.title}>{title}</Text>
+                    <Text style={styles.subTitle}>{subTitle}</Text>
+                </View>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     );
 }
 
