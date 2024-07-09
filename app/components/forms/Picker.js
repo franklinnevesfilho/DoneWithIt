@@ -30,7 +30,7 @@ function Picker({
                         size={30}
                         color={defaultStyles.colors.medium}/>
                     {selectedItem ? (
-                        <Text style={styles.text}>{selectedItem.label}</Text>
+                        <Text style={styles.text}>{selectedItem.name}</Text>
                     ) : (
                         <Text style={[styles.text, styles.placeholder]}>{placeholder}</Text>
                     )}
@@ -46,12 +46,12 @@ function Picker({
                     <Button title={"close"} onPress={()=> setModalVisible(false)} />
                     <FlatList
                         data={items}
-                        keyExtractor={item => item.value.toString()}
+                        keyExtractor={item => item.id.toString()}
                         numColumns={numberOfColumns}
                         renderItem={({item}) =>
                             <PickerItemComponent
                                 item={item}
-                                label={item.label}
+                                label={item.name}
                                 onPress={() => {
                                     setModalVisible(false);
                                     onSelectItem(item);

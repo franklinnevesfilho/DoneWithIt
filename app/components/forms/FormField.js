@@ -20,7 +20,7 @@ function FormField({name, width, ...otherProps}) {
                 onChangeText={handleChange(name)}
                 width={width}
             />
-            <ErrorMessage error={(errors[name])} visible={touched[name]}/>
+            <ErrorMessage error={errors[name]} visible={touched[name]}/>
         </>
     );
 }

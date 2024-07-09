@@ -1,8 +1,7 @@
-import { create } from 'apisauce';
+import {create} from 'apisauce';
 
-const apiClient = create({
-    baseURL: 'http://162.193.0.163:3000/api',
-    timeout: 6000000,
+const client = create({
+    baseURL: 'http://10.255.255.68:9000/api',
 });
 
-export default apiClient;
+export default client;

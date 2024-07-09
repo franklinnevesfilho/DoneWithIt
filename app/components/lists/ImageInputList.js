@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {View, StyleSheet, FlatList, Image, ScrollView} from 'react-native'
+import {View, StyleSheet, ScrollView} from 'react-native'
 import colors from "../../config/colors";
 import ImageInput from "../ImageInput";
 

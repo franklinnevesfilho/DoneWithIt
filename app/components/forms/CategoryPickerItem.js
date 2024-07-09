@@ -6,8 +6,12 @@ import Text from "../Text";
 function CategoryPickerItem({onPress, item}) {
     return (
         <Pressable onPress={onPress} style={styles.container}>
-            <Icon backgroundColor={item.backgroundColor} name={item.icon} size={80}/>
-            <Text style={styles.label}>{item.label}</Text>
+            <Icon
+                backgroundColor={item.backgroundColor}
+                name={item.icon}
+                size={80}
+            />
+            <Text style={styles.label}>{item.name}</Text>
         </Pressable>
     );
 }
